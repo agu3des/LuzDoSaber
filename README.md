@@ -12,6 +12,6 @@
 5. Dos clientes, armazenam-se no cadastro o nome, endereço de forma opcional (rua, número, cep, cidade e estado), e-mail, telefone - que pode ser um ou mais-, e CPF.
 6. Ao ser realizada uma compra, um cliente pode ou não ser auxiliado por um vendedor, além disso, deve ser armazenado a data, hora, e a nota fiscal eletrônica gerada, essa contendo CNPJ da empresa, valor da compra, número e data de emissão da Receita Federal.
 
-### 📝 Aluna
-- [Ananda Guedes](https://github.com/agu3des)
-- [Angêlica Araújo](https://github.com/araujo-angel)
+### 📝 Alunas
+[Ananda Guedes](https://github.com/agu3des)
+[Angêlica Araújo](https://github.com/araujo-angel)
