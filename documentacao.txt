@@ -1,0 +1,33 @@
+Documentação do protocolo de aplicação Biblion, referente ao sistema de compra de livros. 
+Nele, utilizamos como Protocolo da camada de Transporte o TCP, como também trabalhamos com Threads.
+
+As mensagens descritas abaixo são enviadas pelo cliente ao servidor através do método enviar_msg.
+O servidor processa as mensagens recebidas através do método accept_connections.
+
+O servidor envia as respostas ao cliente utilizando o método handle_client.
+
+VALIDAR - Valida se o cliente já está cadastrado na loja.
+200: Cliente encontrado com sucesso!
+400: Cliente não encontrado.
+
+CATALOGO - Solicita ao servidor o catálogo de livros.
+203: Catálogo enviado.
+
+COMPRAR - Solicita ao servidor a compra de um ou mais livros.
+201: Pedido adicionado ao carrinho com sucesso!
+401: Quantidade não disponível no estoque.
+405: Dados incorretos, tente novamente.
+406: ISBN Inválido.
+
+QTLIVRO - Verifica a quantidade de livros
+401: Quantidade não disponível no estoque.
+
+FINALIZAR - Finaliza a compra
+206: Compra finalizada com sucesso!
+207: Compra cancelada.
+211: Confira seu pedido.
+440: Seu carrinho está vazio.
+444: Não foi possível comprar a quantidade desejada.
+
+SAIR - Solicita ao servidor encerrar a conexão.
+204: Desconexão efetuada com sucesso.
