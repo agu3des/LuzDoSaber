@@ -1,0 +1,49 @@
+<main class="content mt-24">
+    <!-- Header -->
+    <div class="header">
+        <div class="header-text">Bem-vindo ao Mundo dos Livros!</div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Explore os Melhores Livros de Todos os Tempos</h1>
+        <p>Descubra suas próximas leituras e mergulhe no universo literário.</p>
+        <button mat-raised-button color="primary" class="btn">Explore os Livros</button>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="content">
+        <p>
+            Nosso site oferece uma plataforma para os amantes de livros, com recomendações, resenhas e informações sobre as mais variadas obras literárias.
+        </p>
+        <p>
+            Seja você um leitor ávido ou alguém em busca de uma boa leitura, aqui temos algo para todos. A plataforma também oferece uma comunidade ativa para compartilhar opiniões sobre os livros lidos e trocar recomendações.
+        </p>
+        <p>
+            Cadastre-se para criar sua estante virtual, avaliar livros, seguir autores e participar de sorteios exclusivos!
+        </p>
+    </div>
+
+    <!-- Notícias e Indicações -->
+    <div class="news-recommendations">
+        <!-- Seção de Notícias -->
+        <h2>Notícias</h2>
+        <section class="news-section">
+            <div *ngFor="let noticia of noticias" class="news-card">
+                <h3><a [href]="noticia.link" target="_blank">{{ noticia.titulo }}</a></h3>
+                <p>{{ noticia.description }}</p>
+                <small>{{ noticia.data }}</small>
+            </div>
+        </section>
+
+        <!-- Seção de Indicações -->
+        <h2>Indicações</h2>
+        <section class="recommendations-section">
+            <div *ngFor="let indicacao of indicacoes" class="recommendation-card">
+                <img [src]="indicacao.img" alt="Indicação">
+                <h3><a [href]="indicacao.link" target="_blank">{{ indicacao.title }}</a></h3>
+                <p>{{ indicacao.description }}</p>
+            </div>
+        </section>
+    </div>
+</main>

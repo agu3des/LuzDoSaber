@@ -1,0 +1,87 @@
+#sidebar {
+    width: 250px;
+    background-color: #debcbe;
+    color: #000;
+    height: calc(100vh - 70px); /* assumindo que o header tem 70px */
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+#sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar nav ul li {
+    margin-bottom: 16px;
+}
+
+#sidebar .search-item > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+#sidebar .search-item > a:hover {
+    background-color: #cfa7a9;
+    transform: translateX(4px);
+}
+
+#sidebar .search-item i {
+    font-size: 1.1rem;
+}
+
+/* Dropdown menus */
+#sidebar .dropdown > a {
+    cursor: pointer;
+}
+
+#sidebar .dropdown ul {
+    margin-top: 8px;
+    padding-left: 20px;
+    list-style: none;
+}
+
+#sidebar .dropdown ul li {
+    margin-bottom: 8px;
+}
+
+#sidebar .dropdown ul li a {
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#sidebar .dropdown ul li a:hover {
+    color: #7c4a4a;
+}
+
+/* Scrollbar (opcional) */
+#sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+    background: #f3e5e5;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #b08888;
+    border-radius: 10px;
+}

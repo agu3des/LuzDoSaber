@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="assets/img/biblion-logo.png" alt="bibliOn Logo" class="logo">
+            <h1 class="logo-text"><a href="index.html">bibliOn</a></h1>
+        </div>
+
+        <div class="nav-links">
+            <a [routerLink]="['/app-library']" class="nav-link">
+                <i class="fa-solid fa-book"></i> Library
+                <span class="underline"></span>
+            </a>            
+
+            <a [routerLink]="['/app-recommendations']" class="nav-link">
+                <i class="fa-solid fa-star"></i> Recommendations
+                <span class="underline"></span>
+            </a>
+
+            <a [routerLink]="['/app-about']" class="nav-link">
+                <i class="fa-solid fa-info-circle"></i> About
+                <span class="underline"></span>
+            </a>
+
+            <a [routerLink]="['/app-login']" class="user-icon">
+                <i class="fa-solid fa-user"></i> Login
+            </a>
+        </div>
+    </div>
+</header>

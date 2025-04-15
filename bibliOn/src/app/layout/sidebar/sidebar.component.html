@@ -1,0 +1,60 @@
+<aside id="sidebar">
+    <nav>
+      <ul>
+        <li class="search-item">
+          <a [routerLink]="['/home']">
+            <i class="fas fa-home"></i> Início
+            <span></span>
+          </a>
+        </li>
+  
+        <li class="search-item">
+          <a [routerLink]="['/catalog']">
+            <i class="fas fa-book"></i> Catálogo
+            <span></span>
+          </a>
+        </li>
+  
+        <li class="search-item dropdown">
+          <a (click)="toggleMenu('genres')">
+            <i class="fas fa-layer-group"></i> Gêneros <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul *ngIf="menuOpen === 'genres'">
+            <li><a [routerLink]="['/genre/romance']"><i class="fas fa-heart"></i> Romance</a></li>
+            <li><a [routerLink]="['/genre/ficcao']"><i class="fas fa-rocket"></i> Ficção</a></li>
+            <li><a [routerLink]="['/genre/biografia']"><i class="fas fa-user"></i> Biografia</a></li>
+            <li><a [routerLink]="['/genre/educacional']"><i class="fas fa-graduation-cap"></i> Educacional</a></li>
+          </ul>
+        </li>
+  
+        <li class="search-item">
+          <a [routerLink]="['/cart']">
+            <i class="fas fa-shopping-cart"></i> Carrinho
+            <span></span>
+          </a>
+        </li>
+  
+        <li class="search-item">
+          <a [routerLink]="['/orders']">
+            <i class="fas fa-box"></i> Meus Pedidos
+            <span></span>
+          </a>
+        </li>
+  
+        <li class="search-item">
+          <a [routerLink]="['/account']">
+            <i class="fas fa-user-circle"></i> Minha Conta
+            <span></span>
+          </a>
+        </li>
+  
+        <li class="search-item">
+          <a [routerLink]="['/login']">
+            <i class="fas fa-sign-in-alt"></i> Login
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  
