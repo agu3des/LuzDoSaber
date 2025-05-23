@@ -6,6 +6,7 @@ import { LayoutModule } from '../layout/layout.module';
 
 import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { ListagemComponent } from './listagem/listagem.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +28,8 @@ import { MatMenuModule, MatMenuTrigger } from "@angular/material/menu";
 @NgModule({
   declarations: [
     ManutencaoComponent,
-    ListagemComponent
+    ListagemComponent,
+    CatalogComponent
   ],
   imports: [
     CommonModule,
@@ -49,10 +51,11 @@ import { MatMenuModule, MatMenuTrigger } from "@angular/material/menu";
   ],
   exports: [    
     ManutencaoComponent,
-    ListagemComponent
+    ListagemComponent,
+    CatalogComponent
   ]
 })
-export class DesastreModule { 
+export class LivroModule { 
 
 
 }

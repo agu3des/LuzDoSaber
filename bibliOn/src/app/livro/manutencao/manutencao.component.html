@@ -1,0 +1,42 @@
+<div class="form-container">
+  <form>
+    <mat-form-field>
+      <mat-label>Título</mat-label>
+      <input matInput [(ngModel)]="livro.titulo" name="titulo" placeholder="Título do livro">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Autor</mat-label>
+      <input matInput [(ngModel)]="livro.autor" name="autor" placeholder="Nome do autor">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Ano de Publicação</mat-label>
+      <input matInput type="number" [(ngModel)]="livro.anoPublicacao" name="anoPublicacao" placeholder="Ex: 2020">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Gênero</mat-label>
+      <input matInput [(ngModel)]="livro.genero" name="genero" placeholder="Ex: Ficção, Romance, Suspense">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Editora</mat-label>
+      <input matInput [(ngModel)]="livro.editora" name="editora" placeholder="Nome da editora">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ISBN</mat-label>
+      <input matInput [(ngModel)]="livro.isbn" name="isbn" placeholder="Código ISBN">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Link de Imagem</mat-label>
+      <input matInput [(ngModel)]="livro.imagemUrl" name="imagemUrl" placeholder="Link da capa do livro">
+    </mat-form-field>
+
+    <button mat-raised-button (click)="cadastrarOuAtualizar()">
+      {{nomeBotaoAcao}}
+    </button>
+  </form>
+</div>

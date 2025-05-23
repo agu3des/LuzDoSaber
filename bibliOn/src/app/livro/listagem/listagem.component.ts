@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Desastre } from '../../shared/model/desastre';
-import { DESASTRES } from '../../shared/model/DESASTRES';
-import { DesastreRestService } from "../../shared/services/desastre-rest.service";
-//import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+import { Livro } from '../../shared/model/livro';
+import { LIVROS } from '../../shared/model/LIVROS';
+import { LivroRestService } from "../../shared/services/livro-rest.service";
+//import { LivroFirestoreService } from "../../shared/services/livro-firestore.service";
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/confirmation-dialog.component';
 
@@ -17,12 +17,12 @@ import { ConfirmationDialogComponent } from '../../layout/confirmation-dialog/co
   styleUrl: './listagem.component.css'
 })
 export class ListagemComponent implements OnInit {
-  DESASTRES: Desastre[] = [];
+  LIVROS: Livro[] = [];
 
-  constructor(private desastreService: DesastreRestService, private roteador: Router, private dialog: MatDialog) {
+  constructor(private livroService: LivroRestService, private roteador: Router, private dialog: MatDialog) {
   }
 
-  trackDesastreId(index: number, item: any): number {
+  trackLivroId(index: number, item: any): number {
     return item.id; 
   }
 
@@ -48,39 +48,39 @@ export class ListagemComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.desastreService.listar().subscribe(
-        desastres => this.DESASTRES = desastres
+    this.livroService.listar().subscribe(
+        livros => this.LIVROS = livros
     );
   }
 
-  confirmRemove(desastre: Desastre) {
+  confirmRemove(livro: Livro) {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       width: '300px',
-      data: { message: `Are you sure you want to delete ${desastre.id}?` }
+      data: { message: `Are you sure you want to delete ${livro.id}?` }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.remover(desastre);
+        this.remover(livro);
       }
     });
   }
 
 
-  remover(desastreARemover: Desastre) {
-    if (desastreARemover.id) {
-      this.desastreService.remover(desastreARemover.id).subscribe(
+  remover(livroARemover: Livro) {
+    if (livroARemover.id) {
+      this.livroService.remover(livroARemover.id).subscribe(
           () => {
             console.log('removido');
-            const desastreIndx = this.DESASTRES.findIndex(desastre => desastre.id === desastreARemover.id);
-            this.DESASTRES.splice(desastreIndx, 1);
+            const livroIndx = this.LIVROS.findIndex(livro => livro.id === livroARemover.id);
+            this.LIVROS.splice(livroIndx, 1);
           }
       );
     }
   }
 
-  alterar(desastre: Desastre) {
-    this.roteador.navigate([`edicao-desastre`, desastre.id]);
+  alterar(livro: Livro) {
+    this.roteador.navigate([`edicao-livro`, livro.id]);
   }
 
 }

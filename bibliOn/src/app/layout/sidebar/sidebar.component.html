@@ -2,19 +2,26 @@
     <nav>
       <ul>
         <li class="search-item">
-          <a [routerLink]="['/home']">
+          <a [routerLink]="['/app-home-page']">
             <i class="fas fa-home"></i> Início
             <span></span>
           </a>
         </li>
   
         <li class="search-item">
-          <a [routerLink]="['/catalog']">
+          <a [routerLink]="['/app-catalog']">
             <i class="fas fa-book"></i> Catálogo
             <span></span>
           </a>
         </li>
   
+        <li class="search-item">
+          <a [routerLink]="['/cadastro-livro']">
+            <i class="fas fa-pen"></i> Cadastro
+            <span></span>
+          </a>
+        </li>
+
         <li class="search-item dropdown">
           <a (click)="toggleMenu('genres')">
             <i class="fas fa-layer-group"></i> Gêneros <i class="fas fa-chevron-down"></i>

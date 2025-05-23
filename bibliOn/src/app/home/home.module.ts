@@ -8,8 +8,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { OriginComponent } from './origin/origin.component';
 import { OngsComponent } from './ongs/ongs.component';
 
-import { VolunteerModule } from '../volunteer/volunteer.module';
-
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButton, MatButtonModule } from "@angular/material/button";
@@ -43,8 +41,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     MatBadgeModule,
     MatSelectModule,
-    MatProgressBarModule,
-    VolunteerModule
+    MatProgressBarModule
   ],
   exports: [    
     HomePageComponent,

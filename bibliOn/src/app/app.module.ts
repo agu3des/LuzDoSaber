@@ -19,8 +19,7 @@ import { MatCardModule } from "@angular/material/card";
 
 import { HomeModule } from "./home/home.module";
 import { LayoutModule } from "./layout/layout.module";
-import { DesastreModule } from "./desastre/desastre.module";
-import { VolunteerModule } from "./volunteer/volunteer.module";
+import { LivroModule } from "./livro/livro.module";
 
 import { MensagemIF } from './shared/model/MensagemIF';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
@@ -29,7 +28,7 @@ import { ErroInterceptor } from './interceptor/erro-interceptor';
 import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
 
 
-import { DesastreRestService } from './shared/services/desastre-rest.service';
+import { LivroRestService } from './shared/services/livro-rest.service';
 
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confirmation-dialog.component';
@@ -54,8 +53,7 @@ import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confir
         MatCardModule,
         HomeModule,
         LayoutModule,
-        DesastreModule,
-        VolunteerModule,
+        LivroModule,
         MatDialogModule
     ],
     providers: [
@@ -72,8 +70,8 @@ import { ConfirmationDialogComponent } from './layout/confirmation-dialog/confir
         useClass: MensagemSweetService
         },
         {
-        provide: DesastreRestService,
-        useClass: DesastreRestService
+        provide: LivroRestService,
+        useClass: LivroRestService
         },
     ],
     exports: [

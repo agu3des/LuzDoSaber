@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ListagemComponent } from "./desastre/listagem/listagem.component";
-import { ManutencaoComponent } from "./desastre/manutencao/manutencao.component";
-
-import { VolunteerManagerComponent } from './volunteer/volunteer-manager/volunteer-manager.component';
-import { VolunteerListComponent } from './volunteer/volunteer-list/volunteer-list.component';
+import { ListagemComponent } from "./livro/listagem/listagem.component";
+import { ManutencaoComponent } from "./livro/manutencao/manutencao.component";
 
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { OriginComponent } from './home/origin/origin.component';
@@ -13,6 +10,7 @@ import { OngsComponent } from './home/ongs/ongs.component';
 
 import { LoginModalComponent } from './layout/login/login.component';
 import { MenuComponent } from './layout/menu/menu.component';
+import { CatalogComponent } from './livro/catalog/catalog.component';
 
 export const routes: Routes = [
     { 
@@ -23,15 +21,15 @@ export const routes: Routes = [
         component: MenuComponent
     },
     {
-        path: 'listagem-desastres',
+        path: 'listagem-livros',
         component: ListagemComponent
     },
     {
-        path: 'cadastro-desastre',
+        path: 'cadastro-livro',
         component: ManutencaoComponent
     },
     {
-        path: 'edicao-desastre/:id',
+        path: 'edicao-livro/:id',
         component: ManutencaoComponent
     },
     {
@@ -50,19 +48,10 @@ export const routes: Routes = [
         path: 'app-login',
         component: LoginModalComponent
     },
-    {
-        path: 'app-volunteer-manager',
-        component: VolunteerManagerComponent
-    },
-    {
-        path: 'app-volunteer-list',
-        component: VolunteerListComponent
-    },
-    {
-        path: 'edit-volunteer/:id',
-        component: VolunteerManagerComponent
-    },
-    
+        {
+        path: 'app-catalog',
+        component: CatalogComponent
+    },    
 ];
 
 @NgModule({

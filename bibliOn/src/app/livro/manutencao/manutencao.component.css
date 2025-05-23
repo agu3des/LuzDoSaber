@@ -18,6 +18,11 @@ form {
 mat-form-field {
   margin-bottom: 16px;
   width: 100%;
+  color: #722653;
+}
+
+mat-text-field {
+  color: #debcbe;
 }
 
 mat-label {
@@ -30,20 +35,21 @@ mat-input, mat-select {
 }
 
 mat-select .mat-select-arrow {
-  color: #00796b;
+  color: #debcbe;
 }
 
 button {
-  background-color: #3138a7;
-  color: white;
+  background-color: #debcbe;
   font-size: 16px;
   padding: 12px;
   margin-top: 20px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   width: 100%;
+  color: black;
 }
 
 button:hover {
-  background-color: #000e4d;
+  color: #722653;
+  background-color: #debcbe;
 }

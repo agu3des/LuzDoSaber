@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { Desastre } from '../../shared/model/desastre';
-import { DesastreRestService } from "../../shared/services/desastre-rest.service";
-//import { DesastreFirestoreService } from "../../shared/services/desastre-firestore.service";
+import { Livro } from '../../shared/model/livro';
+import { LivroRestService } from "../../shared/services/livro-rest.service";
+//import { LivroFirestoreService } from "../../shared/services/livro-firestore.service";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 
 @Component({
@@ -13,44 +13,44 @@ import { MensagemSweetService } from "../../shared/services/mensagem-sweet.servi
 })
 export class ManutencaoComponent {
 
-  desastre: Desastre;
+  livro: Livro;
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
 
 
   constructor(
-    private desastreService: DesastreRestService, 
+    private livroService: LivroRestService, 
     private mensagemService: MensagemSweetService,
     private roteador: Router, 
     private rotaAtivada: ActivatedRoute
   ) {
     this.nomeBotaoAcao = 'Cadastrar';
     this.estahCadastrando = true;
-    this.desastre = new Desastre();
+    this.livro = new Livro();
 
     const idEdicao = this.rotaAtivada.snapshot.paramMap.get('id');
     if (idEdicao) {
       this.nomeBotaoAcao = 'Atualizar';
       this.estahCadastrando = false;
-      this.desastreService.pesquisarPorId(idEdicao).subscribe(
-        desastrePesquisado => this.desastre = desastrePesquisado
+      this.livroService.pesquisarPorId(idEdicao).subscribe(
+        livroPesquisado => this.livro = livroPesquisado
       );
     }
   }
 
   cadastrarOuAtualizar() {
     if (this.estahCadastrando) {
-      this.desastreService.cadastrar(this.desastre).subscribe(
-        desastreCadastrado => {
-          this.mensagemService.sucesso('Desastre cadastrado com sucesso!');
-          this.roteador.navigate(['/listagem-desastres']);
+      this.livroService.cadastrar(this.livro).subscribe(
+        livroCadastrado => {
+          this.mensagemService.sucesso('Livro cadastrado com sucesso!');
+          this.roteador.navigate(['/listagem-livros']);
         }
       );
     } else {
-      this.desastreService.atualizar(this.desastre).subscribe(
-        desastreAtualizado => {
-          this.mensagemService.sucesso('Desastre atualizado com sucesso!');
-          this.roteador.navigate(['/listagem-desastres']);
+      this.livroService.atualizar(this.livro).subscribe(
+        livroAtualizado => {
+          this.mensagemService.sucesso('Livro atualizado com sucesso!');
+          this.roteador.navigate(['/listagem-livros']);
         }
       );
     }

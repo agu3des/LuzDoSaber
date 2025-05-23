@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Desastre } from './shared/model/desastre';
+import { Livro } from './shared/model/livro';
 
 
 @Component({
