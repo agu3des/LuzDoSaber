@@ -1,77 +1,161 @@
-# Disaster PW1
-### Título do Aplicativo: Disaster
+# 📱 BibliOn – Livraria Virtual 📚✨
 
-### Instalações necessárias:
-- Caso não tenha o nodejs, instale com:
-    1. winget install Schniz.fnm
-    2. fnm install 22
-- Instale os módulos com: `npm install`
-- Instale o angular com: `npm install -g @angular/cli`
-- Instale o json-server com: `npm install -g json-server`
+### Título do Aplicativo: **BibliOn**  
+**Descrição:** Aplicativo Android que simula uma livraria virtual. Permite o cadastro de livros, gerenciamento de pedidos, clientes, editoras, funcionários e muito mais, utilizando Firebase como backend.
 
-### Rodar o projeto:
-- Entre na pasta disaster-pw1
-- Rode o ng serve em um terminal
-- Rode o json-server db.json
+---
 
-### Link do Stackblitz
-- https://stackblitz.com/~/github.com/agu3des/Disaster_Pw1?authuser=0 
+## 🚀 Instalações Necessárias
 
-### Descrição do Projeto
+- ✅ **Android Studio** ([Baixar aqui](https://developer.android.com/studio))  
+- ✅ SDK Android atualizado (mínimo recomendado: API 26 ou superior)  
+- ✅ Conta no [Firebase](https://console.firebase.google.com/) configurada  
 
-#### Temática: 
-Sistema de Gerenciamento de Desastres Naturais
+---
 
-#### Descrição do Problema:
-De acordo com a CNN Brasil, “Foram registrados 1.161 eventos de desastres, sendo 716 associados a eventos hidrológicos, como transbordamento de rios, e 445 de origem geológica, como deslizamentos de terra. Na média, foram registrados pelo menos três desastres por dia.” Diante da recorrência desses desastres naturais, é essencial contar com um sistema informatizado para controlar e gerenciar as vítimas, recursos disponíveis e agências de resgate, além de facilitar a coordenação de voluntários e abrigos.
+## 🔥 Configuração do Firebase
 
-#### Solução a ser Implementada: 
-Desenvolver uma aplicação web para o gerenciamento e registro de desastres naturais. O sistema permitirá:
-1. Cadastro e monitoramento de eventos de desastres naturais.
-2. Registro e gestão de vítimas e suas necessidades.
-3. Controle de doadores e doações.
-4. Administração de abrigos e recursos.
-5. Coordenação de voluntários e agências de resgate.
-6. Armazenamento de relatos de testemunhas.
+1. Acesse o [Firebase Console](https://console.firebase.google.com/).  
+2. Crie um projeto chamado `BibliOn`.  
+3. Adicione um aplicativo Android ao projeto (insira o nome do pacote do seu app).  
+4. Baixe o arquivo `google-services.json` e coloque na pasta:  
+```
 
-### Requisitos de Dados:
-- Desastre Natural
-- Vítimas
-- Abrigos
-- Doações
-- Doadores
-- Agências de Resgate
-- Relatos
-- Voluntários
+app/google-services.json
 
-### Requisitos Funcionais (RF):
-- RF1: Registro de desastres naturais, incluindo tipo, localização, data e impacto.
-- RF2: Cadastro e gerenciamento de vítimas afetadas.
-- RF3: Registro de doações, categorizadas por tipo de item e status de distribuição.
-- RF4: Controle de abrigos, incluindo disponibilidade de espaço e recursos.
-- RF5: Cadastro e manutenção de agências de resgate.
-- RF6: Registro de relatos de testemunhas para análise de impacto e prevenção futura.
-- RF7: Gerenciamento de voluntários e suas contribuições.
+````
+5. Ative os seguintes serviços no Firebase:  
+- **Firebase Authentication** (opcional para login de usuários)  
+- **Cloud Firestore** (banco de dados em nuvem)  
+- **Firebase Storage** (opcional, para imagens de livros, etc.)  
 
-### Requisitos Não Funcionais (RNF):
-- RNF1: Desempenho: O sistema deve ser capaz de processar até 100 acessos simultâneos. Tempo de resposta inferior a 3 segundos para operações comuns.
-- RNF2: Segurança: Os dados das vítimas e doações devem ser protegidos por criptografia. Autenticação segura para usuários administrativos.
-- RNF3: Usabilidade: Interface intuitiva e responsiva para dispositivos móveis e desktop.
-- RNF4: Disponibilidade: Tempo de disponibilidade de 99% ao longo do mês. Backup automático dos dados diariamente.
-- RNF5: Escalabilidade: Capacidade de expansão para suportar novos abrigos e desastres registrados.
-- RNF6: Portabilidade: Compatibilidade com navegadores modernos (Chrome, Firefox, Edge, Safari). Suporte para versões web e mobile.
-- RNF7: Manutenibilidade: Código modular e documentado para futuras atualizações. Logs de erro e auditoria para monitoramento e segurança.
-- RNF8: Acessibilidade: Cumprimento das diretrizes WCAG 2.1 para acessibilidade.
+6. No arquivo `build.gradle (Project)`, adicione:  
+```gradle
+dependencies {
+    classpath 'com.google.gms:google-services:4.3.15'
+}
+````
 
-### Possíveis Telas (Templates/Layout):
-1. Tela Inicial: Visão geral dos desastres registrados recentemente.
-2. Tela de Cadastro de Desastre: Formulário para inserção de informações sobre o desastre.
-3. Tela de Vítimas: Listagem e gerenciamento das vítimas registradas.
-4. Tela de Doações: Gerenciamento de doações, incluindo recebimento e distribuição.
-5. Tela de Abrigos: Registro e monitoramento da disponibilidade de espaços.
-6. Tela de Relatos: Formulário para relatos de testemunhas.
-7. Tela de Voluntários: Cadastro e administração de voluntários.
+7. No arquivo `build.gradle (App)`, adicione no final:
 
-### Alunas: 
-- [Ananda Guedes](https://github.com/agu3des)
-- [Letícia Leite](https://github.com/l-e-t-i-c-i-a)
+   ```gradle
+   apply plugin: 'com.google.gms.google-services'
+   ```
+
+---
+
+## ▶️ Como Rodar o Projeto
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/biblion-android.git
+   ```
+
+2. Abra no **Android Studio**:
+
+   * `File` → `Open` → Selecione a pasta do projeto.
+
+3. Verifique se o arquivo `google-services.json` está na pasta `/app`.
+
+4. Clique em **Run ▶️** no Android Studio e escolha um emulador ou dispositivo físico.
+
+---
+
+## 📖 Descrição do Projeto
+
+### 🎯 Temática
+
+**BibliOn – Sistema de Gerenciamento de Livraria Virtual (Mobile)**
+
+### 🏷️ Problema
+
+Livrarias precisam de soluções modernas que permitam o gerenciamento eficiente do catálogo de livros, estoque, pedidos, editoras, clientes e funcionários. O app BibliOn oferece uma interface intuitiva e prática para isso.
+
+### 💡 Solução
+
+Aplicativo Android, conectado ao Firebase, que permite:
+
+* 📚 Cadastro e gerenciamento de livros, editoras e estoque.
+* 👥 Cadastro de clientes.
+* 🛒 Criação e gerenciamento de pedidos.
+* 👨‍💼 Gerenciamento de funcionários (vendedores e caixas).
+* 🧾 Emissão de dados simulados de notas fiscais.
+
+---
+
+## 🗂️ Requisitos de Dados (Coleções no Firestore)
+
+* **Livros**
+* **Editoras**
+* **Filiais**
+* **Clientes**
+* **Funcionários** (vendedores e caixas)
+* **Pedidos** e **Itens do Pedido**
+* **Notas Fiscais**
+
+---
+
+## ✅ Requisitos Funcionais (RF)
+
+* **RF1:** Cadastro e gerenciamento de livros.
+* **RF2:** Cadastro de clientes e gerenciamento de informações.
+* **RF3:** Criação de pedidos com seleção de livros e cálculo total.
+* **RF4:** Controle de estoque e atualização após vendas.
+* **RF5:** Cadastro de funcionários com distinção entre vendedores e caixas.
+* **RF6:** Registro de notas fiscais associadas aos pedidos.
+* **RF7:** Cadastro e manutenção de editoras e suas informações.
+
+---
+
+## 🚩 Requisitos Não Funcionais (RNF)
+
+* **RNF1:** Desempenho: Aplicativo leve e eficiente em redes móveis.
+* **RNF2:** Segurança: Dados armazenados de forma segura no Firebase.
+* **RNF3:** Usabilidade: Design responsivo e acessível (Material Design).
+* **RNF4:** Disponibilidade: Dados sincronizados em tempo real com Firestore.
+* **RNF5:** Escalabilidade: Suporte para múltiplos usuários e filiais.
+* **RNF6:** Portabilidade: Suporte a dispositivos Android 8 (Oreo) ou superior.
+* **RNF7:** Manutenibilidade: Código modular, utilizando arquitetura MVVM.
+* **RNF8:** Acessibilidade: Interface preparada para TalkBack e acessibilidade Android.
+
+---
+
+## 🏗️ Tecnologias Utilizadas
+
+* 🛠️ **Linguagem:** Kotlin
+* 🔥 **Backend:** Firebase (Cloud Firestore, Authentication, Storage)
+* 🎨 **UI:** Material Design
+* 📦 **Arquitetura:** MVVM + LiveData + ViewModel
+* 🌐 **Dependências:**
+
+  * Firebase SDK
+  * Glide (para imagens)
+  * Material Components
+  * Coroutines
+  * Navigation Component
+
+---
+
+## 🎨 Telas do Aplicativo
+
+1. **Tela Inicial:** Destaques e busca de livros.
+2. **Tela de Cadastro de Livros:** Formulário completo com dados e imagem do livro.
+3. **Tela de Clientes:** Listagem, cadastro e gerenciamento.
+4. **Tela de Pedidos:** Criação de pedidos, seleção de livros e finalização.
+5. **Tela de Funcionários:** Cadastro e listagem de vendedores e caixas.
+6. **Tela de Estoque:** Consulta do estoque por filial.
+7. **Tela de Editoras:** Cadastro e edição de editoras.
+
+---
+
+## 👩‍💻 Desenvolvedora
+
+* [Ananda Guedes](https://github.com/agu3des)
+
+---
+
+## 💡 Observações Finais
+
+> Este projeto é acadêmico, com fins didáticos, mas pode ser facilmente expandido para produção real com Firebase. A arquitetura modular e o uso de práticas modernas de desenvolvimento garantem facilidade de manutenção e escalabilidade.
+
