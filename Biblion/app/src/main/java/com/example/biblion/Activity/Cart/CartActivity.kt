@@ -109,7 +109,7 @@ fun CartScreen(
             item { // Título do resumo do pedido
                 Text(
                     text = "Resumo do pedido", // Texto do título
-                    color = colorResource(R.color.darkPurple), // Cor personalizada
+                    color = colorResource(R.color.black), // Cor personalizada
                     fontSize = 18.sp, // Tamanho da fonte
                     fontWeight = FontWeight.Bold, // Negrito
                     modifier = Modifier.padding(top = 16.dp) // Espaçamento superior
@@ -125,7 +125,7 @@ fun CartScreen(
             item { // Título de informações adicionais
                 Text(
                     text = "Informação", // Texto do título
-                    color = colorResource(R.color.darkPurple), // Cor
+                    color = colorResource(R.color.black), // Cor
                     fontSize = 18.sp, // Tamanho da fonte
                     fontWeight = FontWeight.Bold, // Negrito
                     modifier = Modifier.padding(top = 16.dp) // Espaçamento superior

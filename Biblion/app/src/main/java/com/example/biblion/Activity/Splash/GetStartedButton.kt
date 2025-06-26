@@ -48,7 +48,7 @@ fun GetStartedButton(onClick: () -> Unit = {}, modifier: Modifier = Modifier) { 
         Button( // Segundo botão (Começar)
             onClick = {onClick()}, // Executa a ação passada como parâmetro
             colors = ButtonDefaults.buttonColors(
-                containerColor = colorResource(R.color.orange) // Cor de fundo laranja do recursos
+                containerColor = colorResource(R.color.pink) // Cor de fundo laranja do recursos
             ),
             shape = RoundedCornerShape(50.dp), // Cantos arredondados
             modifier = modifier // Aplica modificações passadas

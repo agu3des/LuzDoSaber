@@ -53,7 +53,7 @@ fun Search() { // Função que cria a barra de busca
             backgroundColor = colorResource(R.color.grey), // Cor de fundo
             focusedBorderColor = Color.Transparent, // Sem borda ao focar
             unfocusedLabelColor = Color.Transparent, // Label invisível quando desfocado
-            textColor = Color.DarkGray, // Cor do texto digitado
+            textColor = colorResource(R.color.darkPink), // Cor do texto digitado
             unfocusedBorderColor = Color.Transparent // Borda invisível quando desfocado
         ),
         modifier = Modifier // Aplica modificadores ao campo

@@ -80,7 +80,7 @@ fun HeaderSection(
             fontSize = 24.sp, // tamanho da fonte de 24sp
             fontWeight = FontWeight.Bold, // fonte em negrito
             maxLines = 1, // limite de uma linha
-            color = colorResource(R.color.darkPurple), // cor do texto
+            color = colorResource(R.color.darkPink), // cor do texto
             modifier = Modifier
                 .padding(horizontal = 16.dp) // margem horizontal de 16dp
                 .constrainAs(title){
