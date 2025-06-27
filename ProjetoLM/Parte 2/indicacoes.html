@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Indicacoes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@300&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/icon/icoonav2.png">
+
+</head>
+<style>
+  html.dark body {
+    background-color: pink;
+  }
+
+  .btn-primary {
+    border-color: rgba(190, 139, 139, 0.81);
+    background-color: rgba(190, 139, 139, 0.81);
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: 'Truculenta';
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .btn-primary:hover {
+    border-color: deeppink;
+    background-color: deeppink;
+  }
+
+  h1 {
+    font-family: 'Truculenta';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 46px;
+    display: flex;
+    align-items: left;
+    text-align: center;
+    color: black;
+    padding-left: 18px;
+    width: 300px;
+    margin-left: 0px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-decoration: underline rgba(190, 139, 139, 0.81);
+  }
+
+  label {
+    text-decoration: underline rgba(190, 139, 139, 0.81);
+  }
+
+  .form-group {
+    margin-left: 20px;
+    font-family: 'Truculenta';
+    font-size: 30px;
+
+  }
+
+  ::placeholder {
+    font-size: 20px;
+  }
+
+  .arrow a {
+    color: rgba(190, 139, 139, 0.81);
+  }
+
+  .arrow {
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  .arrow a:hover {
+    color: deeppink;
+  }
+</style>
+
+<body>
+  <main class="container">
+    <h1 class="indicações">Faça aqui sua indicação</h1>
+    <form action="sucesso.html" method="post">
+      <div class="form-group">
+        <label for="nome">Nome</label>*
+        <input type="text" class="form-control" id="nome" name="nome" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>*
+        <input type="text" class="form-control" id="nome" name="nome" required />
+      </div>
+      <div class="form-group">
+        <label for="i">Indicação:</label>*
+        <input type="text" class="form-control"
+          placeholder="Insira aqui a sua indicação de livro e a sinopse ou algum comentário sobre..." id="nome"
+          name="nome" required />
+      </div>
+      <input type="submit" class="btn btn-primary" value="Enviar" />
+    </form>
+    <div class="arrow">
+      <a href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-house"
+          viewBox="0 0 16 16">
+          <path
+            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+        </svg>
+      </a>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+</html>

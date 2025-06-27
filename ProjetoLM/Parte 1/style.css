@@ -1,0 +1,355 @@
+header {
+  position: absolute;
+  top: 0px;
+  background: rgba(190, 139, 139, 0.81);
+  width: 99%;
+}
+
+section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 25px;
+  gap: 30px;
+  left: calc(50% - 440px/2 - 1px);
+  justify-content: space-between;
+}
+
+section0 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 45%;
+  background: url(figma.jpg)
+}
+
+
+.frame1 {
+  font-family: 'Truculenta';
+  color: #FFFFFF;
+  font-size: 25px;
+  list-style: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30%;
+  width: 44%;
+  height: 64%;
+
+}
+
+h1 {
+  width: 146px;
+  height: 84px;
+  left: 30px;
+  top: 2px;
+  font-family: 'Pacifico', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 84px;
+  color: #000000;
+  margin: 0px;
+}
+
+main {
+  text-align: center;
+  font-family: 'Truculenta', 'Montserrat';
+}
+
+.carrossel {
+  position: center;
+  width: 100%;
+  height: 400px;
+  margin-top: 12%;
+  margin-bottom: 5%;
+  background: rgba(255, 225, 225, 0.21);
+  box-shadow: 0 0 50px rgba(0.5, 0.5, 0.5, 0.5);
+  border-radius: 25px;
+}
+
+.video {
+  margin-top: 20px;
+  width: 70%;
+  height: 90%;
+}
+
+.noticias-container {
+  width: 100%;
+  height: 60%;
+  left: 0px;
+  margin-top: 10px;
+  background: rgba(255, 225, 225, 0.81);
+  border: 25px;
+  margin-bottom: 30px;
+}
+
+.noticias {
+  font-size: 1em;
+  box-sizing: border-box;
+  display: inline-grid;
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgba(190, 139, 139, 0.81);
+  border-radius: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h2 {
+  line-height: 1;
+  font-size: 2em;
+}
+
+indicacoes-contaier {
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  left: 0px;
+  padding: 30px;
+  margin-top: 250px;
+  border-radius: 25%;
+}
+
+.recomendacoes {
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-grid;
+  column-gap: 80px;
+  width: 30%;
+  height: 100%;
+  border: 1px solid rgba(190, 139, 139, 0.81);
+  border-radius: 25px;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: overline pink;
+}
+
+section1 {
+  font-family: 'Truculenta';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 46px;
+  display: flex;
+  align-items: left;
+  text-align: center;
+  color: #FFFFFF;
+  padding-left: 15px;
+  width: 300px
+}
+
+.para {
+  margin: 10px;
+}
+
+footer {
+  background-color: rgba(190, 139, 139, 0.81);
+  color: #FFFFFF;
+  padding-right: 40px;
+  padding-left: 35px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  margin-right: 20px;
+  width: 100px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-family: "Truculenta";
+  width: 500px;
+}
+
+.footer-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.footer-icons li {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: left;
+}
+
+svg {
+  color: #FFFFFF;
+  text-align: left;
+}
+
+svg :hover {
+  color: deeppink;
+}
+
+.footer-icons ul {
+  width: 50px;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+/* Estilos para telas com largura de até 600 pixels */
+@media screen and (max-width: 600px) {
+  header {
+    width: 100%;
+  }
+
+  section {
+    flex-direction: column;
+    left: 0;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  section0 {
+    flex-direction: column;
+    gap: 0px;
+    background: url(figma.jpg);
+    background-size: cover;
+  }
+
+  .frame1 {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    left: auto;
+    top: auto;
+    margin: 0;
+  }
+
+  .carrossel {
+    height: 300px;
+    margin-top: 100%;
+  }
+
+  .video {
+    width: 90%;
+    height: 70%;
+  }
+
+  .noticias-container {
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .noticias {
+    width: 90%;
+  }
+
+  .indicacoes-container {
+    margin-top: 150px;
+    padding: 15px;
+  }
+
+  .recomendacoes {
+    width: 90%;
+    column-gap: 30px;
+  }
+
+  section1 {
+    font-size: 25px;
+    line-height: 35px;
+    padding-left: 0;
+    width: auto;
+  }
+
+  h3 {
+    font-size: 30px;
+    width: auto;
+  }
+}
+
+/* Estilos para telas com largura entre 601 pixels e 900 pixels */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  section {
+    gap: 20px;
+    left: calc(50% - 440px / 2 - 1px);
+  }
+
+  .frame1 {
+    width: 100%;
+  }
+
+  .carrossel {
+    margin-top: 12%;
+  }
+
+  .video {
+    width: 80%;
+    height: 80%;
+  }
+
+  .noticias {
+    width: 40%;
+  }
+
+  .recomendacoes {
+    column-gap: 50px;
+  }
+}
+
+/* Estilos para telas com largura acima de 900 pixels */
+@media screen and (min-width: 901px) {
+  section {
+    gap: 30px;
+    left: calc(50% - 440px / 2 - 1px);
+  }
+
+  .frame1 {
+    width: 440px;
+  }
+
+  .carrossel {
+    margin-top: 12%;
+  }
+
+  .video {
+    width: 70%;
+    height: 90%;
+  }
+
+  .noticias {
+    width: 30%;
+  }
+
+  .recomendacoes {
+    column-gap: 80px;
+  }
+}

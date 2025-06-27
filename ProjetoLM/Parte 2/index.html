@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Biblion</title>
+  <link href="style/main.css" rel="stylesheet" type="text/css" />
+  <link href="style/img.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Truculenta:wght@300&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="img/icon/iconnav.png">
+  <link rel="https://fontawesome.com/icons/ellipsis-stroke-vertical?f=classic&s=thin&pc=%23be8b8b">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</head>
+
+<body class="dark:bg-gray-600 dark:text-white">
+  <!--HEADER-->
+  <header class="z-[9999] bg-[#be8b8b]">
+    <section class="dark:bg-gray-800">
+      <h1
+        class="text-black transition duration-75 dark:text-pink-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        id="#home">Biblion</h1>
+      <!-- drawer init and show -->
+      <div class="text-center">
+        <button
+          class="text-black bg-white-700 hover:bg-pink-200 focus:ring-4 focus:ring-pink-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:text-white dark:hover:bg-gray-800 focus:outline-none dark:focus:ring-pink-500"
+          type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
+          aria-controls="drawer-navigation">
+          Menu
+        </button>
+      </div>
+
+      <!-- drawer component -->
+      <div id="drawer-navigation"
+        class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
+        tabindex="-1" aria-labelledby="drawer-navigation-label">
+        <h5 id="drawer-navigation-label" class="text-base font-semibold text-pink-500 uppercase dark:text-pink-400">Menu
+        </h5>
+        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation"
+          class="text-pink-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close menu</span>
+        </button>
+        <div class="py-4 overflow-y-auto">
+          <ul class="space-y-2 font-medium">
+            <li>
+              <a href="#home"
+                class="flex items-center p-2 text-pink-300 rounded-lg dark:text-pink hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-pink-500 transition duration-75 dark:text-pink-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                  </path>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#noticias"
+                class="flex items-center p-2 text-pink-300 rounded-lg dark:text-pink hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-pink-500 transition duration-75 dark:text-pink-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                  </path>
+                  <path
+                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                  </path>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Notícias</span>
+              </a>
+            </li>
+            <li>
+              <a href="#indicacoes"
+                class="flex items-center p-2 text-pink-300 rounded-lg dark:text-pink hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-pink-500 transition duration-75 dark:text-pink-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Indicações</span>
+              </a>
+            </li>
+            <li>
+              <a href="#sobre"
+                class="flex items-center p-2 text-pink-300 rounded-lg dark:text-pink hover:bg-gray-100 dark:hover:bg-gray-700">
+                <svg aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-pink-500 transition duration-75 dark:text-pink-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <span class="flex-1 ml-3 whitespace-nowrap">Sobre</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </header>
+  <!--MAIN-->
+  <main class="mt-24">
+    <!--PARTE DO CARROSSEL -->
+    <div id=" default-carousel" class="relative w-full" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <iframe class=w-full width="620" height="410" src="https://www.youtube.com/embed/8l856XUuRGg"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <iframe class=w-full width="620" height="410" src="https://www.youtube.com/embed/VPFj6ZVCM9w"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <iframe class=w-full width="620" height="410" src="https://www.youtube.com/embed/1VYcRAlVy80"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+          class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button type="button"
+          class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </div>
+    <!--PARTE DAS NOTICIAS -->
+
+    <a href="#noticias" id="noticias"
+      class="relative z-10 mt-5 rounded-full bg-rose-200 dark:bg-gray-50 px-3 py-1.5 font-medium dark:text-black hover:bg-gray-100 font-semibold">Notícias</a>
+    <div
+      class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-4 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-16" class="text-gray-500 dark:text-white">Mar 16, 2020</time>
+        </div>
+        <div class="group relative">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 dark:text-white">
+            <a class="dark:hover:text-pink-300"
+              href="https://www.folhape.com.br/cultura/mulheres-buscam-maior-representatividade-na literatura/216267/"
+              target="_blank">
+              <span class="absolute inset-0"></span>Calendário de eventos literários em 2023 (no Brasil e no exterior)
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-white">Segundo a pesquisa Retratos da
+            Leitura no Brasil, que mensura o comportamento dos leitores em âmbito nacional, as mulheres leem mais do que
+            os homens. A última edição do estudo, revelou que 59% das mulheres do país são leitoras, enquanto no gênero
+            masculino a taxa de leitores é de 52%. Entretanto, a maior adesão das mulheres aos livros ainda não se
+            reflete na representatividade do mercado editorial, que apesar da evolução nos últimos anos, está longe da
+            equidade de gênero.
+        </div>
+      </article>
+
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-16" class="text-gray-500 dark:text-white">Mar 16, 2020</time>
+        </div>
+        <div class="group relative">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 dark:text-white">
+            <a class="dark:hover:text-pink-300"
+              href="//guiadoestudante.abril.com.br/estudo/conheca-raizes-do-brasil-o-livro-que-sempre-cai-nos-vestibulares"
+              target="_blank">
+              <span class="absolute inset-0"></span>Conheça 'Raízes do Brasil', o livro que sempre cai em vestibulares
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-white">"Um clássico de nascença". É
+            assim que o crítico literário Antonio Candido descreve uma das obras fundadoras da historiografia e do
+            pensamento sociológico do país, “Raízes do Brasil“. Escrito pelo historiador Sérgio Buarque de Holanda
+            (1902-1982) e publicado pela primeira vez em 1936, o livro tinha uma grande missão: explicar a formação da
+            sociedade brasileira.
+        </div>
+      </article>
+      <article class="flex max-w-xl flex-col items-start justify-between">
+        <div class="flex items-center gap-x-4 text-xs">
+          <time datetime="2020-03-16" class="text-gray-500 dark:text-white">Mar 16, 2020</time>
+        </div>
+        <div class="group relative">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 dark:text-white">
+            <a class="dark:hover:text-pink-300"
+              href="https://www.publishnews.com.br/materias/2023/02/28/calendario-de-eventos-literarios-em-2023"
+              target="_blank">
+              <span class="absolute inset-0"></span>
+              Calendário de eventos literários em 2023 (no Brasil e no exterior)
+            </a>
+          </h3>
+          <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600 dark:text-white">A Bienal do Livro no Rio, marcada
+            ocorrer de 1º a 10 de setembro, o presidente do Snel, Dante Cid, afirmou ao PublishNews que está buscando
+            opções para tornar o evento mais atraente, de escopo maior do que o que já existe. "A Bienal não pode ser
+            apenas uma feira de venda de livro", disse. "Queremos incrementar e de algumas formas vamos dar outras
+            dimensões", prometeu.
+        </div>
+      </article>
+    </div>
+    <!-- INDICAÇÕES -->
+    <a href="#indicacoes" id="indicacoes"
+      class="relative z-10 mt-5 rounded-full bg-rose-200 dark:bg-gray-50 px-3 py-1.5 font-medium dark:text-black hover:bg-gray-100 font-semibold">Indicações</a>
+    <div class="indicacoes-container scroller">
+      <section0 class="indicacoes">
+        <h2>Anne de Green Gables</h2>
+        <a href="https://www.amazon.com.br/Anne-green-gables-Lucy-Montgomery/dp/8538092669/ref=sr_1_6?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=39WFXGRKCYHL2&keywords=anne&qid=1685302192&sprefix=anne+de+avonlea%2Caps%2C217&sr=8-6"
+          target="_blank"> <img src="img/indicacoes/anne de green gables.jpg"
+            alt="Capa do livro Anne de Anne-green-gables-Lucy-Montgomery" width="100px" class="foto"></a>
+        <p class="p_ajust">Uma jovem menina, ruiva e órfã, foi adotada pelo casal de irmãos para viver em uma fazenda em
+          uma
+          cidadezinha
+          no Canadá. Populazirazdo através da série disponível na Netflix, a história de Anne aborda questões da
+          atualidade sutileza e fortes emoções. </p>
+        <p><a href="detail.html" target="_blank">Leia mais...</a></p>
+      </section0>
+      <section0 class="indicacoes">
+        <h2>O Castelo Animado</h2>
+        <a href="https://www.amazon.com.br/castelo-animado-Diana-Wynne-Jones/dp/655587208X/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3KW9OTPT0FNR2&keywords=o+castelo+animado&qid=1685301507&sprefix=o+castelo+animad%2Caps%2C359&sr=8-1"
+          target="_blank"><img src="img/indicacoes/casteloanimado.jpg"
+            alt="Imagem do livro O castelo castelo-animado-Diana-Wynne-Jones" width="100px" class="foto">
+        </a>
+        <p class="p_ajust">O Castelo Animado é o primeiro livro, no total de três, do box escrito pela autora Diana
+          Wynne Jones. A
+          história se popularizou no Brasil através do filme produzido pelo Estúdio Ghibli e disponível na Netflix,
+          tendo como diretor Hyao Miazaki.</p>
+        <p>Leia mais...</p>
+      </section0>
+      <section0 class="indicacoes">
+        <h2>Fundação</h2>
+        <a href="https://www.amazon.com.br/Funda%C3%A7%C3%A3o-1-Isaac-Asimov/dp/8576574837/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1685302624&sr=8-4"
+          target="_blank"><img src="img/indicacoes/fundacao.jpg" alt="Capa do livro Fundação - Isaac-Asiminov"
+            width="100px" class="foto">
+        </a>
+        <p class="p_ajust">O primeiro de sete livros da saga de ficção científica, noemado de Império, foi escrita pelo
+          autor premiado
+          Isaac Asiminov. Dentre seus livros famosos "Eu, robô".</p>
+        <p>Leia mais...</p>
+      </section0>
+      <section0 class="indicacoes">
+        <h2>As Crônicas de Nárnia</h2>
+        <a href="https://www.amazon.com/As-Cronicas-Narnia-Portugues-Brasil/dp/857827069X" target="_blank"><img
+            src="img/indicacoes/as cronicas de narnia.jpg" alt="Imagem do livro As Crônicas de Nárnia"
+            width="100px" class="foto">
+        </a>
+        <p class="p_ajust">Durante os bombardeios da Segunda Guerra Mundial de Londres, quatro irmãos ingleses são
+          enviados para uma casa de campo onde eles estarão seguros. Um dia, Lucy encontra um guarda-roupa que a
+          transporta para um mundo mágico chamado Nárnia. Depois de voltar, ela logo volta a Nárnia com seus irmãos,
+          Peter e Edmund, e sua irmã, Susan.</p>
+        <p>Leia mais...</p>
+      </section0>
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class="dark:bg-gray-800">
+    <div class="footer-column" id="sobre">
+      <h3>Nossos contatos:</h3>
+      <ul class="footer-icons">
+        <li><i class="fas fa-icon-1"><a href=https://www.instagram.com/biblion_x/ target="_blank"
+              rel="noopener noreferrer"><svg class="img" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+              </svg>
+            </a></i> </li>
+        <li><i class="fas fa-icon-2"></i> <a href="mailto:bibion@gmail.com" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+              class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
+              <path
+                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z" />
+              <path
+                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z" />
+            </svg>
+          </a></li>
+        <li><i class="fas fa-icon-3"></i> <a href=https://www.facebook.com/login/ target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-facebook"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+            </svg>
+          </a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Sua vez de nos indicar um livro:</h3>
+      <ul>
+        <li>
+          <a href="indicacoes.html" target="_blank" rel="noopener noreferrer"><svg
+              xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
+</html>

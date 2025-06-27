@@ -1,0 +1,23 @@
+@host = {{$dotenv https://ofxgepmsbwhbmddouyxx.supabase.co}}
+@token = {{$dotenv eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9meGdlcG1zYndoYm1kZG91eXh4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NzUxMTIsImV4cCI6MjAxMjQ1MTExMn0.ABn_IsHYhyrCbfsANIfRJlZc-bxsduqWw7jYuPyoN6k}}
+
+### Create a investment
+# @name createInvestment
+POST {{host}}/rest/v1/investments
+apikey: {{token}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+Prefer: return=representation
+
+{
+  "name": "Tesouro",
+  "value": 10000,
+  "origin": "Tesouro Direto",
+  "category": "IPCA",
+  "interest": "IPCA + 6%"
+}
+
+### Read investments
+GET {{host}}/rest/v1/investments?select=*
+apikey: {{token}}
+Authorization: Bearer {{token}}
