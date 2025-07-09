@@ -26,7 +26,7 @@ fun RowDetail(item: BookModel, modifier: Modifier = Modifier) { // Define uma fu
             modifier = Modifier.padding(start = 8.dp), // Adiciona padding à esquerda do texto
             fontWeight = FontWeight.Bold, // Deixa o texto em negrito
             fontSize = 15.sp, // Define o tamanho da fonte
-            color = colorResource(R.color.black) // Define a cor do texto
+            color = colorResource(R.color.darkPurple) // Define a cor do texto
         )
         Spacer(modifier = Modifier.width(32.dp)) // Espaço de 32dp entre os elementos
         Image(painter = painterResource(R.drawable.star), contentDescription = null) // Exibe uma imagem de estrela
@@ -35,7 +35,7 @@ fun RowDetail(item: BookModel, modifier: Modifier = Modifier) { // Define uma fu
             modifier = Modifier.padding(start = 8.dp), // Padding à esquerda
             fontWeight = FontWeight.Bold, // Texto em negrito
             fontSize = 15.sp, // Tamanho da fonte
-            color = colorResource(R.color.black) // Cor do texto
+            color = colorResource(R.color.darkPurple) // Cor do texto
         )
         Spacer(modifier = Modifier.width(32.dp)) // Espaço de 32dp
         Image(painter = painterResource(R.drawable.flame), contentDescription = null) // Exibe uma imagem de fogo (calorias)
@@ -44,7 +44,7 @@ fun RowDetail(item: BookModel, modifier: Modifier = Modifier) { // Define uma fu
             modifier = Modifier.padding(start = 8.dp), // Padding à esquerda
             fontWeight = FontWeight.Bold, // Texto em negrito
             fontSize = 15.sp, // Tamanho da fonte
-            color = colorResource(R.color.black) // Cor do texto
+            color = colorResource(R.color.darkPurple) // Cor do texto
         )
     }
 }

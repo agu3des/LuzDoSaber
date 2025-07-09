@@ -45,7 +45,7 @@ fun MyBottomBar() {
                     selectedItem = bottomMenuItem.label // Atualiza o item selecionado
 
                     if (bottomMenuItem.label == "Carrinho") { // Se for o menu "Carrinho"
-                        //context.startActivity(Intent(context, CartActivity::class.java)) // Abre a activity do carrinho
+                        context.startActivity(Intent(context, CartActivity::class.java)) // Abre a activity do carrinho
                     } else {
                         Toast.makeText(context, bottomMenuItem.label, Toast.LENGTH_SHORT).show() // Mostra uma mensagem com o nome do item
                     }

@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.storage)
+    implementation(libs.firebase.firestore.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,4 +73,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.1.0")
     implementation("androidx.compose.foundation:foundation:1.7.6")
+    implementation("androidx.compose.material:material:1.7.6")
+    implementation("androidx.compose.ui:ui-text:1.7.6")
 }

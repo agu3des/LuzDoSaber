@@ -12,9 +12,4 @@
     <color name="grey">#ECECEC</color>
     <color name="darkPurple">#2E4058</color>
     <color name="lightOrange">#FEF4E5</color>
-    <color name="lightRose">#9D757C</color>
-    <color name="lightPink">#EDAEC4</color>
-    <color name="pink">#D1618A</color>
-    <color name="darkPink">#8D3752</color>
-    <color name="blackPink">#2C111A</color>
 </resources>

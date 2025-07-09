@@ -18,13 +18,13 @@ fun DescriptionSection(description:String){ // Função que recebe uma descriç�
             text="Detalhes", // Texto exibido como título
             fontSize = 18.sp, // Tamanho da fonte em scale-independent pixels
             fontWeight = FontWeight.Bold, // Deixa o texto em negrito
-            color = colorResource(R.color.black), // Cor do texto usando recurso de cor
+            color = colorResource(R.color.darkPurple), // Cor do texto usando recurso de cor
             modifier = Modifier.padding(horizontal = 16.dp) // Adiciona espaçamento horizontal de 16dp ao redor
         )
         Text( // Cria uma caixa de texto para a descrição do alimento
             text = description, // Texto vindo do parâmetro da função
             fontSize = 16.sp, // Tamanho da fonte
-            color= colorResource(R.color.black), // Cor do texto usando recurso de cor
+            color= colorResource(R.color.darkPurple), // Cor do texto usando recurso de cor
             modifier = Modifier.padding(16.dp) // Espaçamento de 16dp ao redor do texto
         )
     }

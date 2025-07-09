@@ -43,7 +43,7 @@ fun NumberRow(
                 .padding(start = 8.dp) // espaçamento à esquerda
                 .background(
                     shape = RoundedCornerShape(100.dp), // cantos arredondados bem grandes
-                    color = colorResource(R.color.pink) // cor de fundo laranja
+                    color = colorResource(R.color.orange) // cor de fundo laranja
                 )
                 .constrainAs(buttons) { // define como o layout se posiciona
                     end.linkTo(parent.end) // à direita do pai
@@ -57,7 +57,7 @@ fun NumberRow(
             // Texto que mostra a quantidade de itens no carrinho
             Text(
                 text = "$numberInCart", // mostra a quantidade
-                color = colorResource(R.color.black), // cor roxa escura
+                color = colorResource(R.color.darkPurple), // cor roxa escura
                 fontSize = 16.sp, // tamanho da fonte
                 fontWeight = FontWeight.Bold, // negrito
                 modifier = Modifier
@@ -122,7 +122,7 @@ fun NumberRow(
             text = "$${item.Price}", // exibe o preço com prefixo "$$"
             fontSize = 20.sp, // tamanho da fonte
             fontWeight = FontWeight.Bold, // negrito
-            color = colorResource(R.color.darkPink), // cor roxa escura
+            color = colorResource(R.color.darkPurple), // cor roxa escura
             modifier = Modifier
                 .padding(horizontal = 16.dp) // espaçamento horizontal
                 .constrainAs(price) { // restrições de posicionamento

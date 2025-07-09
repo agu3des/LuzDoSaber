@@ -42,7 +42,7 @@ fun FooterSection(onAddToCartClick: () -> Unit, totalPrice: Double, modifier: Mo
             onClick = onAddToCartClick, // ação ao clicar no botão
             shape = RoundedCornerShape(100.dp), // botão com cantos arredondados
             colors = ButtonDefaults.buttonColors(
-                containerColor = colorResource(R.color.pink) // cor de fundo laranja
+                containerColor = colorResource(R.color.orange) // cor de fundo laranja
             ),
             modifier = Modifier
                 .width(140.dp) // largura de 140dp
@@ -60,7 +60,7 @@ fun FooterSection(onAddToCartClick: () -> Unit, totalPrice: Double, modifier: Mo
                 modifier = Modifier.size(20.dp) // tamanho do ícone
             )
             Spacer(modifier = Modifier.width(16.dp)) // espaço de 16dp entre ícone e texto
-            Text("Ordem", fontSize = 20.sp, color = Color.White) // texto "Ordem" em branco
+            Text("Comprar", fontSize = 20.sp, color = Color.White) // texto "Ordem" em branco
         }
 
         Column(
@@ -73,14 +73,14 @@ fun FooterSection(onAddToCartClick: () -> Unit, totalPrice: Double, modifier: Mo
                     start.linkTo(parent.start) // alinhado à esquerda
                 }
         ) {
-            Text("Total Preço", fontSize = 18.sp, color = colorResource(R.color.black)) // label de preço
+            Text("Total Preço", fontSize = 18.sp, color = colorResource(R.color.darkPurple)) // label de preço
             val decimalFormat = DecimalFormat("#.00") // formata número com duas casas decimais
             Text(
                 "$${decimalFormat.format(totalPrice)}", // exibe o preço formatado com símbolo de dólar
                 fontSize = 18.sp, // tamanho da fonte
                 modifier = Modifier.padding(top = 8.dp), // espaçamento superior de 8dp
                 fontWeight = FontWeight.Bold, // texto em negrito
-                color = colorResource(R.color.black) // cor roxa escura
+                color = colorResource(R.color.darkPurple) // cor roxa escura
             )
         }
     }

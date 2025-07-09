@@ -101,7 +101,7 @@ fun DotIndocator(
     modifier: Modifier = Modifier, // Modificador padrão
     totalDots: Int, // Quantidade total de pontos
     selectedIndex: Int, // Índice do ponto selecionado
-    selectedColor: Color = colorResource(R.color.pink), // Cor do ponto selecionado
+    selectedColor: Color = colorResource(R.color.orange), // Cor do ponto selecionado
     unSelectedColor: Color = colorResource(R.color.grey), // Cor dos pontos não selecionados
     dotSize: Dp // Tamanho dos pontos
 ) {

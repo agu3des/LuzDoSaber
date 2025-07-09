@@ -95,7 +95,7 @@ fun RowScope.BookDetails(item: BookModel) { // Componente que mostra detalhes do
     ) {
         Text(
             text = item.Title, // Nome do alimento
-            color = colorResource(R.color.black), // Cor do texto
+            color = colorResource(R.color.darkPurple), // Cor do texto
             fontSize = 16.sp, // Tamanho da fonte
             fontWeight = FontWeight.SemiBold, // Peso semi negrito
             maxLines = 1, // Limita a uma linha
@@ -106,7 +106,7 @@ fun RowScope.BookDetails(item: BookModel) { // Componente que mostra detalhes do
         RatingBarRow(item.TempoLeitura) // Mostra a avaliação por estrelas
         Text(
             text = "$${item.Price}", // Preço do alimento
-            color = colorResource(R.color.black), // Cor do texto
+            color = colorResource(R.color.darkPurple), // Cor do texto
             fontSize = 18.sp, // Tamanho da fonte
             fontWeight = FontWeight.SemiBold, // Peso semi negrito
             modifier = Modifier.padding(top = 8.dp) // Espaçamento superior

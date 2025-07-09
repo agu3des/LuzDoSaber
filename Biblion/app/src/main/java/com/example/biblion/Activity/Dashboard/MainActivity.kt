@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateListOf // importa para criar listas 
 import androidx.compose.runtime.mutableStateOf // importa para criar estados mutáveis simples
 import androidx.compose.runtime.remember // importa para manter o estado durante a recomposição
 import androidx.compose.runtime.setValue // importa para usar propriedade Delegates para estado
+import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier // importa a classe Modifier para modificar componentes
 import com.example.biblion.Domain.BannerModel // importa o modelo de banner
 import com.example.biblion.Domain.CategoryModel // importa o modelo de categoria
@@ -24,60 +25,65 @@ import com.example.biblion.ViewModel.MainViewModel // importa o ViewModel princi
 class MainActivity : AppCompatActivity() { // define a atividade principal estendendo AppCompatActivity
     override fun onCreate(savedInstanceState: Bundle?) { // método chamado na criação da atividade
         super.onCreate(savedInstanceState) // chama o método pai para configuração padrão
-        enableEdgeToEdge() // habilita o conteúdo que vai até as bordas da tela
+//        enableEdgeToEdge() // habilita o conteúdo que vai até as bordas da tela
         setContent { // define o conteúdo da atividade usando Compose
             MainScreen() // chama a função Compose que monta a tela principal
         }
     }
 }
 
-@Composable // indica que a função é um componente Compose
+@Composable
 fun MainScreen() {
-    val scaffoldState = rememberScaffoldState() // lembra o estado do scaffold (barra, drawer, etc.)
-    val viewModel = MainViewModel() // cria uma instância do ViewModel para buscar dados
+    val scaffoldState = rememberScaffoldState()
+    val viewModel = MainViewModel()
 
-    val banners = remember { mutableStateListOf<BannerModel>() } // lista de banners que reage às mudanças
-    val categories = remember { mutableStateListOf<CategoryModel>() } // lista de categorias que reage às mudanças
+    val banners = remember { mutableStateListOf<BannerModel>() }
+    val categories = remember { mutableStateListOf<CategoryModel>() }
 
-    var showBannerLoading by remember { mutableStateOf(true) } // controla a exibição do loading de banners
-    var showCategoryLoading by remember { mutableStateOf(true) } // controla o loading de categorias
+    var showBannerLoading by remember { mutableStateOf(true) }
+    var showCategoryLoading by remember { mutableStateOf(true) }
 
-    LaunchedEffect(Unit) { // efeito ao iniciar a composição
-        viewModel.loadBanner().observeForever { // observa as mudanças nos banners carregados
-            banners.clear() // limpa a lista de banners
-            banners.addAll(it) // adiciona os banners carregados
-            showBannerLoading = false // esconde o loading de banners
+    // Texto digitado no campo de busca
+    var searchQuery by remember { mutableStateOf("") }
+
+    // Lista filtrada com base na busca
+    val filteredCategories = categories.filter {
+        it.CategoryName.contains(searchQuery, ignoreCase = true)
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.loadBanner().observeForever {
+            banners.clear()
+            banners.addAll(it)
+            showBannerLoading = false
         }
     }
 
-    LaunchedEffect(Unit) { // outro efeito ao iniciar a composição
-        viewModel.loadCategory().observeForever { // observa as categorias carregadas
-            categories.clear() // limpa a lista de categorias
-            categories.addAll(it) // adiciona as categorias carregadas
-            showCategoryLoading = false // esconde o loading de categorias
+    LaunchedEffect(Unit) {
+        viewModel.loadCategory().observeForever {
+            categories.clear()
+            categories.addAll(it)
+            showCategoryLoading = false
         }
     }
 
     Scaffold(
-        bottomBar = { MyBottomBar() }, // define a barra inferior personalizada
-        scaffoldState = scaffoldState // passa o estado do scaffold
-    ) { paddingValues -> // bloco de conteúdo do scaffold com padding automático
+        bottomBar = { MyBottomBar() },
+        scaffoldState = scaffoldState
+    ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
-                .fillMaxSize() // preenche toda a tela disponível
-                .padding(paddingValues = paddingValues) // aplica o padding do scaffold
+                .fillMaxSize()
+                .padding(paddingValues)
         ) {
             item {
-                TopBar() // adiciona a barra superior
+                TopBar()
             }
             item {
-                Banner(banners, showBannerLoading) // exibe os banners com loading
+                Banner(banners, showBannerLoading)
             }
             item {
-                Search() // componente de busca
-            }
-            item{
-                CategorySection(categories, showCategoryLoading) // seção de categorias com loading
+                SearchableCategorySection(categories, showCategoryLoading)
             }
         }
     }

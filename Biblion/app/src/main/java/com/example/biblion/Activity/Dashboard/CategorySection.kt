@@ -100,7 +100,7 @@ fun CategoryItem(category: CategoryModel, modifier: Modifier = Modifier, onItemC
         modifier = modifier
             .fillMaxWidth() // O componente ocupa toda a largura disponível
             .background(
-                color = colorResource(R.color.lightPink), // Cor de fundo
+                color = colorResource(R.color.lightOrange), // Cor de fundo
                 shape = RoundedCornerShape(13.dp) // Cantos arredondados
             )
             .clickable(onClick = onItemClick) // Torna clicável
@@ -114,7 +114,7 @@ fun CategoryItem(category: CategoryModel, modifier: Modifier = Modifier, onItemC
         )
         Text(
             text = category.CategoryName, // Nome da categoria
-            color = colorResource(R.color.black), // Cor do texto
+            color = colorResource(R.color.darkPurple), // Cor do texto
             fontSize = 14.sp, // Tamanho da fonte
             fontWeight = FontWeight.Bold, // Texto em negrito
             modifier = Modifier.padding(top = 8.dp) // Espaçamento acima do texto

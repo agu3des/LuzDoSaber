@@ -50,7 +50,7 @@ fun SplashScreen(onGetStartedClick: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(R.color.blackPink)),
+            .background(color = colorResource(R.color.darkBrown)),
 
     ) {
         ConstraintLayout(
@@ -84,7 +84,7 @@ fun SplashScreen(onGetStartedClick: () -> Unit = {}) {
         }
         val styledText= buildAnnotatedString { // Cria um texto com estilos diferentes
             append("Bem-vindo ao App ") // Texto padrão
-            withStyle(style = SpanStyle(color = colorResource(R.color.pink))){ // Estilo para a próxima parte
+            withStyle(style = SpanStyle(color = colorResource(R.color.orange))){ // Estilo para a próxima parte
                 append("Biblion  \n") // Texto com cor diferente e quebra de linha
             }
             append("\nAproveite nossas promoções.") // Continuação do texto
