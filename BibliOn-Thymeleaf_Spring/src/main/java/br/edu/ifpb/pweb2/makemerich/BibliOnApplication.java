@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MakemerichApplication {
+public class BibliOnApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MakemerichApplication.class, args);
+		SpringApplication.run(BibliOnApplication.class, args);
 	}
 
 }

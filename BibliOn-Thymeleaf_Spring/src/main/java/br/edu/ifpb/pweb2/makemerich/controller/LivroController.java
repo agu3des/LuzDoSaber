@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import br.edu.ifpb.pweb2.makemerich.model.Lista;
+import br.edu.ifpb.pweb2.makemerich.model.Livro;
 import br.edu.ifpb.pweb2.makemerich.model.Usuario;
 import br.edu.ifpb.pweb2.makemerich.service.CategoriaService;
-import br.edu.ifpb.pweb2.makemerich.service.ListaService;
+import br.edu.ifpb.pweb2.makemerich.service.LivroService;
 import br.edu.ifpb.pweb2.makemerich.service.UsuarioService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/listas")
-public class ListaController {
+@RequestMapping("/livros")
+public class LivroController {
 
     @Autowired
-    private ListaService listaService;
+    private LivroService livroService;
 
     @Autowired
     private UsuarioService usuarioService;
@@ -34,15 +34,15 @@ public class ListaController {
 
     @GetMapping("/form")
     public ModelAndView getForm(HttpSession session) {
-        ModelAndView model = new ModelAndView("listas/form");
-        Lista lista = new Lista();
+        ModelAndView model = new ModelAndView("livros/form");
+        Livro livro = new Livro();
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
         if (!usuario.isAdmin()) {
-            lista.setUsuario(usuario);
+            livro.setUsuario(usuario);
         }
 
-        model.addObject("lista", lista);
+        model.addObject("livro", livro);
         return model;
     }
 
@@ -53,40 +53,40 @@ public class ListaController {
 
     @ModelAttribute("menu")
     public String selectMenu() {
-        return "lista";
+        return "livro";
     }
 
     @PostMapping
-    public ModelAndView save(Lista lista, RedirectAttributes attr, HttpSession session) throws AccessDeniedException {
+    public ModelAndView save(Livro livro, RedirectAttributes attr, HttpSession session) throws AccessDeniedException {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
         if (!usuario.isAdmin() &&
-                !lista.getUsuario().getId().equals(usuario.getId())) {
+                !livro.getUsuario().getId().equals(usuario.getId())) {
             throw new AccessDeniedException("Ação não permitida");
         }
 
-        listaService.save(lista);
-        attr.addFlashAttribute("mensagem", "Lista salva com sucesso!");
-        return new ModelAndView("redirect:/listas");
+        livroService.save(livro);
+        attr.addFlashAttribute("mensagem", "Livro salva com sucesso!");
+        return new ModelAndView("redirect:/livros");
     }
 
     @GetMapping
     public ModelAndView list(HttpSession session) {
-        ModelAndView model = new ModelAndView("listas/list");
+        ModelAndView model = new ModelAndView("livros/list");
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
-        List<Lista> listas = usuario.isAdmin()
-                ? listaService.findAll()
-                : listaService.findByUsuarioEmail(usuario.getEmail());
+        List<Livro> livros = usuario.isAdmin()
+                ? livroService.findAll()
+                : livroService.findByUsuarioEmail(usuario.getEmail());
 
-        model.addObject("listas", listas);
+        model.addObject("livros", livros);
         return model;
     }
 
     @GetMapping("/editar/{id}")
     public ModelAndView edit(@PathVariable Integer id) {
-        ModelAndView model = new ModelAndView("listas/form");
-        model.addObject("lista", listaService.findById(id));
+        ModelAndView model = new ModelAndView("livros/form");
+        model.addObject("livro", livroService.findById(id));
         return model;
     }
 
@@ -98,8 +98,8 @@ public class ListaController {
             throw new AccessDeniedException("Ação não permitida");
         }
 
-        listaService.deleteById(id);
-        attr.addFlashAttribute("mensagem", "Lista removida com sucesso!");
-        return new ModelAndView("redirect:/listas");
+        livroService.deleteById(id);
+        attr.addFlashAttribute("mensagem", "Livro removida com sucesso!");
+        return new ModelAndView("redirect:/livros");
     }
 }

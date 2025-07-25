@@ -28,9 +28,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = "conta")
+@EqualsAndHashCode(exclude = "livro")
 @Entity
-public class Transacao implements Serializable {
+public class Favorito implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -53,7 +53,7 @@ public class Transacao implements Serializable {
     private Categoria categoria;
 
     @ManyToOne
-    private Lista conta;
+    private Livro livro;
 
     @OneToMany(mappedBy = "transacao", cascade = CascadeType.ALL)
     private List<Comentario> comentarios = new ArrayList<>();

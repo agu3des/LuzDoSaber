@@ -21,5 +21,5 @@ public class Comentario implements Serializable {
     String texto;
 
     @ManyToOne
-    private Transacao transacao;
+    private Favorito transacao;
 }

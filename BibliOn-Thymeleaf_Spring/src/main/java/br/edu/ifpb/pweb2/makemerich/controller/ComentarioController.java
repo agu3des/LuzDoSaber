@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.edu.ifpb.pweb2.makemerich.model.Comentario;
-import br.edu.ifpb.pweb2.makemerich.model.Transacao;
+import br.edu.ifpb.pweb2.makemerich.model.Favorito;
 import br.edu.ifpb.pweb2.makemerich.service.ComentarioService;
-import br.edu.ifpb.pweb2.makemerich.service.TransacaoService;
+import br.edu.ifpb.pweb2.makemerich.service.FavoritoService;
 
 
 @Controller
@@ -20,7 +20,7 @@ import br.edu.ifpb.pweb2.makemerich.service.TransacaoService;
 public class ComentarioController {
 
     @Autowired
-    private TransacaoService transacaoService;
+    private FavoritoService transacaoService;
 
     @Autowired
     private ComentarioService comentarioService;
@@ -28,7 +28,7 @@ public class ComentarioController {
     // Listar comentários de uma transação
     @GetMapping("/listar/{idTransacao}")
     public ModelAndView listarComentarios(@PathVariable Integer idTransacao, ModelAndView model) {
-        Transacao transacao = transacaoService.buscarPorId(idTransacao);
+        Favorito transacao = transacaoService.buscarPorId(idTransacao);
         model.addObject("transacao", transacao);
         model.addObject("comentarios", transacao.getComentarios());
         model.setViewName("comentarios/list");
@@ -39,7 +39,7 @@ public class ComentarioController {
     @GetMapping("/novo/{idTransacao}")
     public ModelAndView novoComentario(@PathVariable Integer idTransacao, ModelAndView model) {
         Comentario comentario = new Comentario();
-        Transacao transacao = transacaoService.buscarPorId(idTransacao);
+        Favorito transacao = transacaoService.buscarPorId(idTransacao);
         comentario.setTransacao(transacao);
         model.addObject("comentario", comentario);
         model.setViewName("comentarios/form");

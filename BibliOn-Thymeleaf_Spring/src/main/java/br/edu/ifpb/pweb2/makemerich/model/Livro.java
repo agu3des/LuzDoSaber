@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Lista implements Serializable {
+public class Livro implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,20 +34,20 @@ public class Lista implements Serializable {
     private Integer diaFechamento;
 
     @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL)
-    private Set<Transacao> transacoes = new HashSet<Transacao>();
+    private Set<Favorito> favoritos = new HashSet<Favorito>();
 
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    public Lista(Usuario usuario) {
+    public Livro(Usuario usuario) {
         this.usuario = usuario;
     }
 
     public BigDecimal getSaldo() {
     BigDecimal total = BigDecimal.ZERO;
 
-    for (Transacao t : this.transacoes) {
+    for (Favorito t : this.favoritos) {
         BigDecimal valor = t.getValor();
         Categoria categoria = t.getCategoria();
 
@@ -63,9 +63,9 @@ public class Lista implements Serializable {
 }
 
 
-    public void addTransacao(Transacao transacao) {
-        this.transacoes.add(transacao);
-        transacao.setLista(this);
+    public void addFavorito(Favorito Favorito) {
+        this.favoritos.add(Favorito);
+        Favorito.setLivro(this);
     }
 
 

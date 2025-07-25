@@ -42,5 +42,5 @@ public class Categoria {
     private boolean ativa = true; // usado para desativar sem excluir
 
     @OneToMany(mappedBy = "categoria")
-    private List<Transacao> transacoes = new ArrayList<>();
+    private List<Favorito> transacoes = new ArrayList<>();
 }
