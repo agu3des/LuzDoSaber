@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import br.edu.ifpb.pweb2.makemerich.model.Conta;
+import br.edu.ifpb.pweb2.makemerich.model.Lista;
 import br.edu.ifpb.pweb2.makemerich.model.Correntista;
 import br.edu.ifpb.pweb2.makemerich.model.Transacao;
 import br.edu.ifpb.pweb2.makemerich.service.CategoriaService;
-import br.edu.ifpb.pweb2.makemerich.service.ContaService;
+import br.edu.ifpb.pweb2.makemerich.service.ListaService;
 import br.edu.ifpb.pweb2.makemerich.service.TransacaoService;
 import jakarta.servlet.http.HttpSession;
 @Controller
@@ -28,14 +28,14 @@ public class TransacaoController {
     private TransacaoService transacaoService;
 
     @Autowired
-    private ContaService contaService;
+    private ListaService contaService;
 
     @Autowired
     private CategoriaService categoriaService;
 
     @GetMapping("/nova/{idConta}")
     public ModelAndView nova(@PathVariable Integer idConta, HttpSession session) throws AccessDeniedException {
-        Conta conta = contaService.findById(idConta);
+        Lista conta = contaService.findById(idConta);
         Correntista usuario = (Correntista) session.getAttribute("usuario");
 
         if (!usuario.isAdmin() && !conta.getCorrentista().getId().equals(usuario.getId())) {
@@ -54,7 +54,7 @@ public class TransacaoController {
 
     @PostMapping("/salvar")
     public ModelAndView salvar(@ModelAttribute Transacao transacao, RedirectAttributes redirect) {
-        Conta conta = contaService.findByIdWithTransacoes(transacao.getConta().getId());
+        Lista conta = contaService.findByIdWithTransacoes(transacao.getConta().getId());
 
         if (transacao.getId() == null) {
             conta.addTransacao(transacao);
@@ -83,7 +83,7 @@ public class TransacaoController {
     @GetMapping("/editar/{idTransacao}")
     public ModelAndView editar(@PathVariable Integer idTransacao, HttpSession session) throws AccessDeniedException {
         Transacao transacao = transacaoService.buscarPorId(idTransacao);
-        Conta conta = contaService.findByIdWithTransacoes(transacao.getConta().getId());
+        Lista conta = contaService.findByIdWithTransacoes(transacao.getConta().getId());
         Correntista usuario = (Correntista) session.getAttribute("usuario");
 
         if (!usuario.isAdmin() && !conta.getCorrentista().getId().equals(usuario.getId())) {
@@ -108,11 +108,11 @@ public class TransacaoController {
         
         if (usuario.isAdmin()) {
             // Admin vê todas as contas
-            List<Conta> todasContas = contaService.findAll();
+            List<Lista> todasContas = contaService.findAll();
             mav.addObject("todasContas", todasContas);
         } else {
             // Usuário comum vê apenas suas contas
-            List<Conta> contasDoUsuario = contaService.findByCorrentista(usuario);
+            List<Lista> contasDoUsuario = contaService.findByCorrentista(usuario);
             mav.addObject("contasDoUsuario", contasDoUsuario);
         }
         
@@ -121,7 +121,7 @@ public class TransacaoController {
 
      @GetMapping("/listar/{idConta}")
     public ModelAndView listar(@PathVariable Integer idConta, HttpSession session) throws AccessDeniedException {
-        Conta conta = contaService.findByIdWithTransacoes(idConta);
+        Lista conta = contaService.findByIdWithTransacoes(idConta);
         
         if (conta == null) {
             ModelAndView mav = new ModelAndView("error");

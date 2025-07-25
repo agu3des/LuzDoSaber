@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.ifpb.pweb2.makemerich.model.Correntista;
+import br.edu.ifpb.pweb2.makemerich.model.Usuario;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -18,7 +18,7 @@ public class AuthInterceptor implements HandlerInterceptor {
             throws Exception {
         HttpSession httpSession = request.getSession(false);
         if (httpSession != null) {
-            Correntista usuario = (Correntista) httpSession.getAttribute("usuario");
+            Usuario usuario = (Usuario) httpSession.getAttribute("usuario");
 
             if (usuario != null) {
                 String contextPath = request.getContextPath(); 
@@ -27,15 +27,15 @@ public class AuthInterceptor implements HandlerInterceptor {
                 // Remove o contextPath do path
                 String relativePath = path.substring(contextPath.length());
 
-                // Verifica se a URL acessada começa com "/correntistas" ou "/contas"
+                // Verifica se a URL acessada começa com "/usuarios" ou "/listas"
                 boolean requerAdmin = (
-                    relativePath.startsWith("/correntistas")  ||
-                     (relativePath.startsWith("/contas") &&
-                        !(relativePath.equals("/contas") || // GET listagem, já filtrada no controller por tipo
-                        relativePath.equals("/contas/form") || // liberar criação de conta
-                        relativePath.contains("/nuconta") ||
+                    relativePath.startsWith("/usuarios")  ||
+                     (relativePath.startsWith("/listas") &&
+                        !(relativePath.equals("/listas") || // GET listagem, já filtrada no controller por tipo
+                        relativePath.equals("/listas/form") || // liberar criação de lista
+                        relativePath.contains("/nulista") ||
                         relativePath.contains("/transacoes") ||
-                        relativePath.contains("/operacao"))) // ← libera o acesso à /contas/operacao
+                        relativePath.contains("/operacao"))) // ← libera o acesso à /listas/operacao
                 );
 
                 // Se exige admin, verifica se o usuário é admin

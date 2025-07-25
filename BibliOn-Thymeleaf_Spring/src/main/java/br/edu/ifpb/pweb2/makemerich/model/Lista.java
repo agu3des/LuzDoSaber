@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Conta implements Serializable {
+public class Lista implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,15 +33,15 @@ public class Conta implements Serializable {
     private String tipo;
     private Integer diaFechamento;
 
-    @OneToMany(mappedBy = "conta", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL)
     private Set<Transacao> transacoes = new HashSet<Transacao>();
 
     @ManyToOne
-    @JoinColumn(name = "id_correntista")
-    private Correntista correntista;
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
-    public Conta(Correntista correntista) {
-        this.correntista = correntista;
+    public Lista(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public BigDecimal getSaldo() {
@@ -65,7 +65,7 @@ public class Conta implements Serializable {
 
     public void addTransacao(Transacao transacao) {
         this.transacoes.add(transacao);
-        transacao.setConta(this);
+        transacao.setLista(this);
     }
 
 

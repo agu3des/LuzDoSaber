@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Correntista implements Serializable {
+public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id

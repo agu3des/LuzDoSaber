@@ -1,7 +1,7 @@
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/principal}" th:with="titulo='Nova Conta'">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/principal}" th:with="titulo='Nova Lista'">
   <body>
     <div layout:fragment="conteudo">
-      <form th:action="@{/contas}" method="POST" th:object="${conta}">
+      <form th:action="@{/listas}" method="POST" th:object="${lista}">
         <input type="hidden" th:field="*{id}" />
 
         <div class="form-group mx-sm-3 mb-2">
@@ -15,11 +15,11 @@
         </div>
 
         <div class="form-group mx-sm-3 mb-2">
-          <label for="tipo">Tipo de Conta</label>
-          <select th:field="*{tipo}" class="form-select" id="tipoConta" onchange="exibirOuOcultarFechamento()">
+          <label for="tipo">Tipo de Lista</label>
+          <select th:field="*{tipo}" class="form-select" id="tipoLista" onchange="exibirOuOcultarFechamento()">
             <option value="">-- Selecione --</option>
-            <option value="CORRENTE" th:selected="${conta.tipo == 'CORRENTE'}">Corrente</option>
-            <option value="CARTAO" th:selected="${conta.tipo == 'CARTAO'}">Cartão</option>
+            <option value="CORRENTE" th:selected="${lista.tipo == 'CORRENTE'}">Corrente</option>
+            <option value="CARTAO" th:selected="${lista.tipo == 'CARTAO'}">Cartão</option>
           </select>
         </div>
 
@@ -27,7 +27,7 @@
           <label for="diaFechamento">Dia do Fechamento</label>
           <input type="number" th:field="*{diaFechamento}" class="form-control" min="1" max="31"
             id="diaFechamento"
-            th:disabled="${conta.tipo == null or conta.tipo == 'CORRENTE'}" />
+            th:disabled="${lista.tipo == null or lista.tipo == 'CORRENTE'}" />
         </div>
         
  <!-- Campo de correntista modificado -->
@@ -49,12 +49,12 @@
         </div>
         
         <button type="submit" class="btn btn-primary">Salvar</button>
-        <a class="btn btn-secondary" th:href="@{/contas}">Cancelar</a>
+        <a class="btn btn-secondary" th:href="@{/listas}">Cancelar</a>
       </form>
 
       <script>
         function ajustarCampoFechamento() {
-          const tipo = document.getElementById("tipoConta").value;
+          const tipo = document.getElementById("tipoLista").value;
           const inputFechamento = document.getElementById("diaFechamento");
 
           if (tipo === "CARTAO") {
@@ -66,7 +66,7 @@
         }
 
         window.addEventListener("DOMContentLoaded", ajustarCampoFechamento);
-        document.getElementById("tipoConta").addEventListener("change", ajustarCampoFechamento);
+        document.getElementById("tipoLista").addEventListener("change", ajustarCampoFechamento);
       </script>
     </div>
   </body>

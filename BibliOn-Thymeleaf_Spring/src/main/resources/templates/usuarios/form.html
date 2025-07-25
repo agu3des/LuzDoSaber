@@ -1,7 +1,7 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/principal}" th:with="titulo='Novo Correntista'">
 <body>
     <div layout:fragment="conteudo">
-      <form th:action="@{/correntistas}" method="POST" th:object="${correntista}">
+      <form th:action="@{/usuarios}" method="POST" th:object="${usuario}">
         <input type="hidden" th:field="*{id}" />
         <label for="nome" class="form-label">Nome:</label>
         <input type="text" class="form-control" th:field="*{nome}" />
@@ -19,7 +19,7 @@
         <br />
 
         <input type="submit" class="btn btn-primary" value="Salvar" />
-        <a class="btn btn-secondary" th:href="@{/correntistas}">Cancelar</a>
+        <a class="btn btn-secondary" th:href="@{/usuarios}">Cancelar</a>
       </form>
     </div>
   </body>

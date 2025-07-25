@@ -53,7 +53,7 @@ public class Transacao implements Serializable {
     private Categoria categoria;
 
     @ManyToOne
-    private Conta conta;
+    private Lista conta;
 
     @OneToMany(mappedBy = "transacao", cascade = CascadeType.ALL)
     private List<Comentario> comentarios = new ArrayList<>();

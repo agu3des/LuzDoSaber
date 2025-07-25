@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.edu.ifpb.pweb2.makemerich.model.Correntista;
-import br.edu.ifpb.pweb2.makemerich.repository.CorrentistaRepository;
+import br.edu.ifpb.pweb2.makemerich.model.Usuario;
+import br.edu.ifpb.pweb2.makemerich.repository.UsuarioRepository;
 import br.edu.ifpb.pweb2.makemerich.util.PasswordUtil;
 import jakarta.servlet.http.HttpSession;
 
@@ -18,20 +18,20 @@ import jakarta.servlet.http.HttpSession;
 public class AuthController {
 
     @Autowired
-    private CorrentistaRepository correntistaRepo;
+    private UsuarioRepository usuarioRepo;
 
     @GetMapping
     public ModelAndView getForm(ModelAndView model) {
         model.setViewName("auth/login");
-        model.addObject("usuario", new Correntista());
+        model.addObject("usuario", new Usuario());
         return model;
     }
 
     @PostMapping
-    public ModelAndView valide(Correntista correntista, HttpSession session, ModelAndView model,
+    public ModelAndView valide(Usuario usuario, HttpSession session, ModelAndView model,
             RedirectAttributes redirectAttts) {
-        if ((correntista = this.isValido(correntista)) != null) {
-            session.setAttribute("usuario", correntista);
+        if ((usuario = this.isValido(usuario)) != null) {
+            session.setAttribute("usuario", usuario);
             model.setViewName("redirect:/home");
         } else {
             redirectAttts.addFlashAttribute("mensagem", "Login e/ou senha inválidos!");
@@ -47,14 +47,14 @@ public class AuthController {
         return mav;
     }
 
-    private Correntista isValido(Correntista correntista) {
-        Correntista correntistaBD = correntistaRepo.findByEmail(correntista.getEmail());
+    private Usuario isValido(Usuario usuario) {
+        Usuario usuarioBD = usuarioRepo.findByEmail(usuario.getEmail());
         boolean valido = false;
-        if (correntistaBD != null) {
-            if (PasswordUtil.checkPass(correntista.getSenha(), correntistaBD.getSenha())) {
+        if (usuarioBD != null) {
+            if (PasswordUtil.checkPass(usuario.getSenha(), usuarioBD.getSenha())) {
                 valido = true;
             }
         }
-        return valido ? correntistaBD : null;
+        return valido ? usuarioBD : null;
     }
 }
