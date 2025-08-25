@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Biblion</string>
-    <string name="splashSubtitle">Para uma experiência de leitura prazerosa.</string>
-    <string name="title_activity_splash">SplashActivity</string>
-</resources>
